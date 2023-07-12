@@ -129,10 +129,39 @@
                 padding: 6px 12px;
             }
         }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.8;
+            animation: backgroundAnimation 10s linear infinite;
+            background-image: radial-gradient(#f6eefc 3%, transparent 20%),
+                radial-gradient(#f4faf8 3%, transparent 20%);
+            background-position: 0 0, 25px 25px;
+            background-size: 50px 50px;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background-position: 0 0, 25px 25px;
+            }
+
+            100% {
+                background-position: 50px 50px, 75px 75px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <div class="background-animation"></div>
+
     <div class="container">
         <h1>Yan Simrok</h1>
 
@@ -141,21 +170,33 @@
             <ul>
                 <li>C# .NET</li>
                 <li>Java</li>
-                <li>Git</li>
-                <li>JavaScript</li>
                 <li>Python</li>
+                <li>C++</li>
+                <li>JavaScript</li>
                 <li>HTML/CSS</li>
+                <li>Git</li>
                 <li>SQL</li>
             </ul>
         </div>
-
+        <div class="projects">
+            <h2>About</h2>
+            <div class="project">
+                <p>Male 19 years old. I am studying on the last year of the specialty of technician-programmer.
+                    Hardworking and motivated. I live in Minsk, Belarus.</p>
+                <li style="color: #777;
+                line-height: 1.5;">Russian Native level</li>
+                <li style="color: #777;
+                line-height: 1.5;">English level B1</li>
+            </div>
+        </div>
         <div class="projects">
             <h2>My projects</h2>
             <div class="project">
                 <h3>Social-services</h3>
                 <a href="https://github.com/YansiG/Social-services" style="display: inline-block;">Social-services</a>
-                <p style="display: inline-block;"> - This is a project aimed at facilitating the work of the social service of the educational institution.</p>
-                
+                <p style="display: inline-block;"> - This is a project aimed at facilitating the work of the social
+                    service of the educational institution.</p>
+
             </div>
             <div class="project">
                 <h3>LIST</h3>
@@ -169,7 +210,18 @@
                 <p style="display: inline-block;"> - It's a console quest game implemented in Python.</p>
             </div>
         </div>
-
+        <div class="projects">
+            <h2>Courses</h2>
+            <div class="project">
+                <h3>Python programming by Bioinformatics Institute</h3>
+                <a href="https://stepik.org/cert/1340612" style="display: inline-block;">The course</a>
+                <p style="display: inline-block;"> focuses on python programming.</p>
+            </div>
+            <h2>Hobbies</h2>
+            <div class="project">
+                <p>Game development and playing electric guitar</p>
+            </div>
+        </div>
         <div class="contact">
             <h2>My social</h2>
             <a href="mailto:Yan.Simrok@gmail.com">Gmail</a>
@@ -178,6 +230,15 @@
             <a href="https://t.me/Yan_S1r">Telegram</a>
         </div>
     </div>
+
+    <script>
+        window.addEventListener('resize', function () {
+            var backgroundAnimation = document.querySelector('.background-animation');
+            backgroundAnimation.style.animation = 'none';
+            backgroundAnimation.offsetHeight;
+            backgroundAnimation.style.animation = 'backgroundAnimation 10s linear infinite';
+        });
+    </script>
 </body>
 
 </html>
