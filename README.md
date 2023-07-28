@@ -1,2 +1,2 @@
 # YansiG.github.io
-Personal portfolio
+Personal resume
